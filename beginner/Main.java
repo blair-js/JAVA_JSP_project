@@ -321,9 +321,133 @@ public class Main {
 //		1. 1부터 4까지 출력해보기
 //		2. 1번을 사용해서 11부터 44까지 출력해보기
 //		3. 카드섞기. 카드는 총 52장. 섞여서 나오는 카드는 7장 랜덤 출력 
-//		3. 주사위를 10번 던져서 나오는 값들을 홀수, 짝수 분류하기
+//		4. 주사위를 10번 던져서 나오는 값들을 홀수, 짝수 분류하기
 //		4. 주사위를 100번 던져서 나오는 값들을 1-6까지 몇번씩 나왔는지 세어보기. 
 
+//		int [] num = new int[4];
+//		
+//		for(int i=0; i<num.length; i++) {
+//			num[i] = i+1;
+//			System.out.print(num[i]);
+//		}
+//		System.out.println();
+//		
+//		num[0] += 10;
+//		num[1] += 20;
+//		num[2] += 30;
+//		num[3] += 40;
+//		
+//		for(int i=0; i<num.length; i++) {
+//			System.out.printf("num[%d] = %d\n", i, num[i]);
+//		}
+//		System.out.println();
+//		
+//		
+//		int[] card = new int[52];
+//		int rIndex;
+//		int temp;
+//		
+//		for(int i=0; i<card.length; i++) {
+//			card[i] = i+1;
+//		}
+//		
+//		for(int i=0; i<100; i++) {
+//			rIndex = (int)(Math.random()*51 +1);
+//			temp = card[0];
+//			card[0] = card[rIndex];
+//			card[rIndex] = temp;
+//		}
+//		
+//		for(int i=0; i<7; i++) {
+//			System.out.println(card[i]);
+//		}
+		
+		int [] total = new int[10];
+		int evenCnt=0;
+		int oddCnt=0;
+		
+		for(int i=0; i<total.length; i++) {
+			int rNum = (int)(Math.random()*6 +1);
+			total[i] = rNum;
+			System.out.printf("%d ", total[i]);
+				if(total[i]%2 == 0) {
+					evenCnt++;
+				}
+				if(total[i]%2 == 1) {
+					oddCnt++;
+				}
+		}
+
+		int [] evenArr = new int[evenCnt];
+		int [] oddArr = new int[oddCnt];
+		int even = 0;
+		int odd = 0 ;
+		
+		for(int i=0; i<total.length; i++) {
+			if(total[i]%2 == 0) {
+				evenArr[even] = total[i];
+				even++;
+			}
+			if(total[i]%2 == 1) {
+				oddArr[odd] = total[i];
+				odd++;
+			}		
+		}
+		System.out.println();
+		
+		for(int i=0; i<evenArr.length; i++) {
+			System.out.printf("even[%d]: %d\n",i, evenArr[i]);
+		}
+		System.out.println();
+		for(int i=0; i<oddArr.length; i++) {
+			System.out.printf("odd[%d]: %d\n",i, oddArr[i]);
+		}
+		System.out.println();
+		
+		int [] num = new int[100];
+		int oneCnt = 0;
+		int twoCnt = 0;
+		int threeCnt = 0;
+		int fourCnt = 0;
+		int fiveCnt = 0;
+		int sixCnt = 0;
+		
+		for(int i=0; i<num.length; i++) {
+			int rNum = (int)(Math.random()*6 +1);
+			num[i] = rNum;
+			System.out.print(num[i]);
+			
+				if(num[i] == 1) {
+				oneCnt++;	
+				}
+				if(num[i] == 2) {
+					twoCnt++;	
+				}
+				if(num[i] == 3) {
+					threeCnt++;	
+				}
+				if(num[i] == 4) {
+					fourCnt++;	
+				}
+				if(num[i] == 5) {
+					fiveCnt++;	
+				}
+				if(num[i] == 6) {
+					sixCnt++;	
+				}
+		}
+		System.out.println();
+		System.out.printf("1은 [%d]번 출력되었습니다.", oneCnt);
+		System.out.printf("2은 [%d]번 출력되었습니다.", twoCnt);
+		System.out.printf("3은 [%d]번 출력되었습니다.", threeCnt);
+		System.out.printf("4은 [%d]번 출력되었습니다.", fourCnt);
+		System.out.printf("5은 [%d]번 출력되었습니다.", fiveCnt);
+		System.out.printf("6은 [%d]번 출력되었습니다.", sixCnt);
+		
+		
 	
 	}
 }
+
+
+
