@@ -316,7 +316,7 @@ public class Main {
 		System.out.printf("총: %d번\n", ttCnt);
 	}
 
-	public static void main(String[] args) {
+	public static void main3(String[] args) {
 //		배열복습
 //		1. 1부터 4까지 출력해보기
 //		2. 1번을 사용해서 11부터 44까지 출력해보기
@@ -447,7 +447,69 @@ public class Main {
 		
 	
 	}
-}
 
+	public static void main(String[] args) {
+//	 int [][] arr = new int [][] {{1,2,3,4,5},{6,7},{8,9}}; //3개의 엘리먼트를 갖는 2차원 배열. 
+//	 
+//	 for(int i=0; i<arr.length; i++) {
+//		 for(int j=0; j<arr[i].length; j++) {
+//			 System.out.printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+//		 }
+//		 System.out.println();
+//	 }
+	 
+
+//	 Scanner sc = new Scanner(System.in);
+//	 
+//	 int data=1;
+//	 
+//	 System.out.print("1차 배열 크기 입력: ");
+//	 int fLayer = sc.nextInt();
+//	 System.out.print("2차 배열 크기 입력: ");
+//	 int sLayer = sc.nextInt();
+//
+//	 int [][] arr = new int [fLayer][sLayer];
+//	 for(int i=0; i<arr.length; i++) {
+//		 for(int j=0; j<arr[i].length; j++) {
+//			 arr[i][j] = data++;
+//		 }
+//	 }
+//	 System.out.println();
+//
+//		 for(int i=0; i<arr.length; i++) {
+//		 for(int j=0; j<arr[i].length; j++) {
+//			 System.out.printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+//		 }
+//		 System.out.println();
+//	 }		 
+
+//	 빙고판 만들기
+//	 사용자로부터 가로,세로 크기를 입력 받아 빙고판을 만들고
+//	 빙고판의 모든 자리의 값은 중복되지 않는 임의의 값으로 채워보세요.
+		 	
+
+//	Scanner sc = new Scanner(System.in);
+//	
+//	System.out.print("가로: ");
+//	int fnum = sc.nextInt();
+//	sc.nextLine();
+//	System.out.print("세로: ");
+//	int snum = sc.nextInt();
+//	
+//	int arr[][] = new int[fnum][snum];
+//	int std = 0;
+//	
+//	for(int i=0; i<arr.length; i++) {
+//		for(int j=0; j<arr[i].length; j++) {
+//			int rNum = (int)(Math.random()*100);
+//			arr [i][j] = rNum + std;
+//			std = arr[i][j];
+//			System.out.printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+//		}
+//		System.out.println();
+//	}
+
+	}
+}
 
 
