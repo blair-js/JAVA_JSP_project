@@ -448,7 +448,7 @@ public class Main {
 	
 	}
 
-	public static void main(String[] args) {
+	public static void main4(String[] args) {
 //	 int [][] arr = new int [][] {{1,2,3,4,5},{6,7},{8,9}}; //3개의 엘리먼트를 갖는 2차원 배열. 
 //	 
 //	 for(int i=0; i<arr.length; i++) {
@@ -510,6 +510,370 @@ public class Main {
 //	}
 
 	}
+
+	public static void main(String[] args) {
+//		ConstEx c = new ConstEx();
+//		ConstEx cc = new ConstEx(100);
+//		ConstEEx ccc = new ConstEEx();
+//		
+//		System.out.println(c.def);
+//		System.out.println(cc.def);
+//		System.out.println(ccc.def);
+		
+//		Sum sum = new Sum();
+		
+//		int ires = sum.ssum(1,2,3);
+//		String sres = sum.ssum("가","나");
+		
+//		System.out.println(ires);
+//		System.out.println(sres);
+
+//		int a = 5, b = 6;
+//		String s1 = "가", s2 = "나";
+//		
+//		System.out.println(sum.ssum(a, b));
+//		System.out.println(sum.ssum(s1,s2));
+		
+		/////////////////////
+		
+//		Car car = new Car(2, "빨간색", "manual");
+//		
+//		System.out.println("color\t: " + car.color);
+//		System.out.println("gear\t: " + car.gearType);
+//		System.out.println("door\t: " + car.door);
+		
+		////////////////////////
+		
+		Car car1 = new Car("빨간색", "manual", 2, "car1");
+		Car car2 = new Car("진주색", "auto", 4, "car2");
+		
+//		car1.disp("car1");
+//		car2.disp("car2");
+		
+//		KimKangSa kks = new KimKangSa("김강사", 28);
+//		KimKangSa kys = new KimKangSa();
+//		
+//		kks.disp();
+//		kys.disp();
+		
+		/////////////////////////////////////////////
+		
+//		Cellphone cp1 = new Cellphone(1, "G8", "LG", 80);
+//		Cellphone cp2 = new Cellphone(); 
+//		Cellphone cp3 = new Cellphone(3, "Note10", "SKT", 100);
+//		
+//		cp1.disp();
+//		cp2.disp();
+//		cp3.disp();
+
+		/////////////////////////////////////////////
+		
+		Mobile m1 = new Mobile("G8", "LGT", 80);
+		Mobile m2 = new Mobile("아이폰8", "KT", 85);
+		Mobile m3 = new Mobile("Note10", "SKT", 100);
+
+		m1.disp();
+		m2.disp();
+		m3.disp();
+		System.out.println();
+		
+		Mobile [] marr = new Mobile[] {m1, m2, m3};
+		Mobile.disp(marr);
+	
+	}
 }
+
+class Mobile{
+	private String name;
+	private String telecom;
+	private int price;	
+	
+	public Mobile(){
+		
+	}
+	
+	public Mobile(String name){
+		this.name = name;
+	}
+	
+	public Mobile(String name, String telecom, int price) {
+		this.name = name;
+		this.telecom = telecom;
+		this.price = price;
+	}
+
+	
+	public String getName() {
+		return name;
+	}
+
+	public String getTelecom() {
+		return telecom;
+	}
+
+	public void setTelecom(String telecom) {
+		this.telecom = telecom;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	 public static void disp(Mobile [] marr) { 
+		 System.out.printf("\t%s\t%s\t%s\n", "name", "telecom", "price");
+			
+		for(int i=0; i<marr.length; i++) {
+				
+		System.out.printf("[%d]\t", i+1);
+		System.out.printf("%s\t", marr[i].getName());
+		System.out.printf("%s\t", marr[i].getTelecom());
+		System.out.printf("%d만원\n", marr[i].getPrice());
+		
+		}
+	}
+	
+	public void disp() {
+		System.out.println("모   델: " + getName());
+		System.out.println("통신사: " + getTelecom());
+		System.out.println("가   격: " + getPrice() + "만원");
+		System.out.println();
+	}
+	
+}
+
+
+class Cellphone{
+	private int number;
+	private String name;
+	private String company;
+	private int price;
+
+	Cellphone(){
+		this(2, "아이폰8", "KT", 85);		
+		System.out.println("\tname \ttelecom \tprice");
+		
+	}
+		
+	Cellphone(int number, String name, String company, int price){
+		this.number = number;
+		this.name = name;
+		this.company = company;
+		this.price = price;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+	
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public void disp() {
+		System.out.printf("[%d] \t%s \t%s \t\t%d만원\n", getNumber(), getName(), getCompany(), getPrice());
+	}
+		
+}
+
+class KimKangSa {
+	private String name;
+	private int age;
+	
+	KimKangSa(){
+		this("김강오", 38);
+	}
+	
+	KimKangSa(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public void disp() {
+		System.out.println("이름: " + getName());
+		System.out.println("나이: " + getAge() + "살");
+		System.out.println();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+///선생님 클래스/////
+
+class Car {
+	private String color;
+	private String gearType;
+	private int door;
+	
+//	Car(){
+//		//디폴트 생성자입니다.
+//	}
+	Car(String color1, String gearType1, int door1, String model) {
+		color = color1;
+		gearType = gearType1;
+		door = door1;
+		disp(model);
+	}
+	
+	public void setColor(String color1) {
+		color = color1;
+	}
+	public void setGearType(String gearType1) {
+		gearType = gearType1;
+	}
+	public void setDoor(String door1) {
+		gearType = door1;
+	}
+	public String getColor() {
+		return color;
+	}
+	public String getGearType() {
+		return gearType;
+	}
+	public int getDoor() {
+		return door;
+	}
+	
+	public void disp(String model) {
+		System.out.printf("[%s의 정보]\n", model);
+		System.out.println("color\t:" + getColor());
+		System.out.println("gearType\t:" + getGearType());
+		System.out.println("door\t:" + getDoor());
+		System.out.println();
+	}
+	
+}
+
+//class Car {
+//	 int door;
+//	String color;
+//	String gearType;
+//	
+//	Car(int d, String c, String g) {
+//		door = d;
+//		color = c;
+//		gearType = g;
+//	}	
+//}
+
+//class Car {
+//	private String color;
+//	private String gearType;
+//	private int door;
+//	
+//	public void setColor(String color1) {
+//		color = color1;
+//	}
+//	public void setGearType(String gearType1) {
+//		gearType = gearType1;
+//	}
+//	public void setDoor(int door1) {
+//		door = door1;
+//	}
+//
+//	public String getColor() {
+//		return color;
+//	}
+//	public String getGearType() {
+//		return gearType;
+//	}
+//	public int getDoor() {
+//		return door;
+//	}
+//		
+//}
+
+
+class Sum {
+	
+	int ssum(int a, int b) {
+		int res;
+		res = a + b;
+		return res;
+	}
+	
+	int ssum(int a, int b, int c) {
+		int res;
+		res = a + b + c;
+		return res;
+	}
+	
+	String ssum(String a, String b) {
+		String res; 
+		res = a + "," + b;
+		return res;
+	}
+}
+
+class ConstEx {
+	int def;
+	
+	ConstEx(){
+		def = 20;
+	}
+	
+	ConstEx(int deff) {
+		def = deff;
+	}
+	
+	
+}
+
+class ConstEEx {
+	int def;	
+}
+
 
 
